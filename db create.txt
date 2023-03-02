@@ -1,0 +1,29 @@
+create database WFlabs;
+create table data ( id serial primary key, string text);
+
+create user WFadmin with password '123';
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO WFadmin;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO WFadmin;
+ALTER USER WFadmin WITH SUPERUSER;
+
+CREATE OR REPLACE FUNCTION wf_insert(text) RETURNS VOID
+AS
+$$
+    BEGIN
+        INSERT INTO data (string) VALUES ($1);
+    END
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION wf_delete(integer) RETURNS integer
+AS
+$$
+    declare result integer;
+    BEGIN
+        DELETE FROM data WHERE id = $1 returning 1 into result;
+        if (result != 0) then return result;
+        else return 0;
+        end if;
+    END
+$$
+LANGUAGE 'plpgsql';

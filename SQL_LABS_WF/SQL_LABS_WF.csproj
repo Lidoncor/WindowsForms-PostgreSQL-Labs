@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Npgsql" Version="6.0.3" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.310801">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Lab7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lab6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lab5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lab4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lab3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Lab2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
